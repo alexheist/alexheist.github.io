@@ -1,44 +1,96 @@
-html {
-    padding: 25px;
+/*
+    credit: Manu Moreale
+    link: https://manuelmoreale.com/typography-and-spacing-in-css
+*/
+@mixin aku-type {
+    $baseSize: 0.6rem; // Base Font Size 15/25;
+    $baseRatio: .8 , 1 , 1.25 , 1.563 , 1.953 , 2.441;
+    font-size: $baseSize * nth($baseRatio , 2);
+    font-family: inherit;
+    line-height: 1rem;
+}
 
-    &:before {
-        content: '';
-        position: fixed;
-        inset: 15px;
-        border: 3px solid #3dadff;
-        border-radius: 10px;
-    }
+html {
+    @include aku-type;
+    font-size: 16px;
+    padding: 25px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #444;
+}
+
+a {
+    color: #444;
+    text-decoration-style: dotted;
+    text-decoration-color: #aaa;
 }
 
 .welcome {
     position: relative;
-    width: calc(100vw - 60px);
-
-    &__image {
-        display: block;
-        margin: 50px auto;
-        position: relative;
-        width: calc(100vw - 110px);
-    }
-
-    &__copy {
-        position: relative;
-        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        max-width: 250px;
-        margin: 25px auto;
-        color: #222;
-    }
+    margin: 25px auto;
+    max-width: 250px;
+    color: #444;
 
     &__greeting {
-        font-size: 20px;
+        font-size: 1rem;
         margin: 0;
     }
 
     &__name {
-        font-size: 50px;
+        font-size: 2.5rem;
         font-weight: bold;
+        margin: 1rem auto 0;
+        text-align: center;
+        color: #222;
+        font-style: italic;
+    }
+}
+
+.blog {
+    position: relative;
+    margin: 100px auto 0;
+    max-width: 900px;
+
+    &__list {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    &__post {
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 2fr 1fr;
         margin: 0;
-        text-align: right;
-        color: #3dadff;
+    }
+
+    &__title {
+        display: inline;
+        justify-self: start;
+    }
+
+    &__date {
+        display: inline;
+        margin: 0;
+        justify-self: end;
+    }
+}
+
+.post {
+    margin: 100px auto 0;
+    max-width: 900px;
+
+    &__content {
+        min-height: 33vh;
+        border-bottom: 3px solid #aaa;
+        margin-bottom: 25px;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    html {
+        font-size: 32px;
+    }
+
+    .welcome {
+        max-width: 600px;
     }
 }

@@ -4,10 +4,13 @@ canonical: https://alexheist.com
 title: alex heist
 description: the personal website of alex heist
 ---
-<section class="welcome">
-    <img class="welcome__image" src="/assets/images/welcome_image.png" alt="Photo Collage" />
-    <div class="welcome__copy">
-        <p class="welcome__greeting">the personal website of</p>
-        <p class="welcome__name">alex heist</p>
-    </div>
+<section class="blog">
+    <ul class="blog__list">
+        {% for post in site.posts %}
+            <li class="blog__post">
+                <a class="blog__title" href="{{ post.url }}">{{ post.title }}</a>
+                <p class="blog__date">{{ post.date | date_to_string: "ordinal", "US" | downcase }}</p>
+            </li>
+        {% endfor %}
+    </ul>
 </section>
