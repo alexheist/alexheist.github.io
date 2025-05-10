@@ -25,8 +25,7 @@ html {
 
 a {
     color: $primary-text;
-    text-decoration-style: dotted;
-    text-decoration-color: #aaa;
+    text-decoration: none;
 }
 
 .z-text {
@@ -47,7 +46,7 @@ a {
 
 .welcome {
     position: relative;
-    margin: 1rem auto;
+    margin: 0 auto;
     text-align: center;
     height: 25rem;
     max-width: 600px;
@@ -117,8 +116,8 @@ a {
 }
 
 .post {
-    margin: 100px auto 0;
-    max-width: 900px;
+    margin: 1rem auto 0;
+    max-width: 750px;
 
     &__content {
         min-height: 33vh;
