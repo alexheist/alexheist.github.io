@@ -10,44 +10,86 @@
     line-height: 1rem;
 }
 
+$bg: #fff;
+$primary-text: #191B24;
+$alt-text: #f3ce32;
+$blue: #57c4e5;
+$coral: #ff8360;
+
 html {
     @include aku-type;
     font-size: 16px;
-    padding: 25px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: #444;
+    font-family: 'Roboto', sans-serif;
+    color: $primary-text;
 }
 
 a {
-    color: #444;
+    color: $primary-text;
     text-decoration-style: dotted;
     text-decoration-color: #aaa;
 }
 
+.z-text {
+  transform: rotateX(30deg);
+}
+
+.z-layer:not(:first-child) {
+	color: #b82800;
+}
+
+.serif {
+    font-family: 'EB Garamond', serif;
+}
+
+.sans_serif {
+    font-family: 'Roboto', sans-serif;
+}
+
 .welcome {
     position: relative;
-    margin: 25px auto;
-    max-width: 250px;
-    color: #444;
+    margin: 1rem auto;
+    text-align: center;
+    height: 25rem;
+    max-width: 600px;
+
+    &__image {
+        position: absolute;
+        width: 20rem;
+        max-width: 600px;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
 
     &__greeting {
-        font-size: 1rem;
-        margin: 0;
+        position: absolute;
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+        font-weight: 500;
+        font-style: italic;
+        color: $alt-text;
+        width: 15rem;
+        max-width: 400px;
+        top: 3rem;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     &__name {
-        font-size: 2.5rem;
-        font-weight: bold;
-        margin: 1rem auto 0;
-        text-align: center;
-        color: #222;
-        font-style: italic;
+        position: absolute;
+        font-size: 5rem;
+        font-weight: 600;
+        color: $coral;
+        bottom: 3.5rem;
+        width: 100%;
+        left: 50%;
+        transform: translateX(-50%);
     }
 }
 
 .blog {
     position: relative;
-    margin: 100px auto 0;
+    margin: 1rem auto 0;
     max-width: 900px;
 
     &__list {

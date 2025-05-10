@@ -7,8 +7,8 @@ description: the personal website of alex heist
     <ul class="blog__list">
         {% for post in site.posts %}
             <li class="blog__post">
-                <a class="blog__title" href="{{ post.url }}">{{ post.title }}</a>
-                <p class="blog__date">{{ post.date | date_to_string: "ordinal", "US" | downcase }}</p>
+                <a class="blog__title sans_serif" href="{{ post.url }}">{{ post.title }}</a>
+                <p class="blog__date serif">{{ post.date | date_to_string: "ordinal", "US" | downcase }}</p>
             </li>
         {% endfor %}
     </ul>
