@@ -1,8 +1,11 @@
 ---
 layout: default
 ---
+<section class="welcome">
+    <img class="welcome__image" src="/assets/images/greeting.jpg" />
+    <p class="welcome__greeting sans_serif">{{ page.title }}</p>
+</section>
 <section class="post">
-    <h1 class="post__title">{{ page.title }}</h1>
     <p class="post__date">{{ page.date | date_to_string: "ordinal", "US" | downcase }}</p>
     <div class="post__content">
         {{ content }}
