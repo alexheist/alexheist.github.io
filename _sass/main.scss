@@ -93,7 +93,7 @@ a {
     max-width: 325px;
     text-align: center;
     margin: 0 auto;
-    font-size: .65rem;
+    font-size: .75rem;
     line-height: .75rem;
 }
 
@@ -138,9 +138,9 @@ a {
 }
 
 .post {
-    margin: 3rem auto 0;
+    margin: 3rem auto;
     max-width: 750px;
-    font-size: .75rem;
+    font-size: .85rem;
 
     &__content {
         min-height: 33vh;
@@ -185,5 +185,13 @@ a {
 
     .welcome {
         max-width: 600px;
+    }
+
+    .blurb {
+        font-size: .65rem;
+    }
+
+    .post {
+        font-size: .75rem;
     }
 }
