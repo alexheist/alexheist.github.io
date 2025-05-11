@@ -8,12 +8,16 @@ description: the personal website of alex heist
     <p class="welcome__greeting sans_serif">Welcome!<br>You've found your way to the personal website of</p>
     <div class="welcome__name serif"><p data-z data-z-depth="20px">alex heist</p></div>
 </section>
-<section class="blog">
+<section class="blurb">
+    <p class="serif">Learn about <a href="/2025/05/11/why-this-site-exists.html">why this site exists</a>. Or browse some of <a href="#blog">my many thoughts</a>. Or visit some of <a href="">my favorite blogs and posts</a>. Or <a href="">just email me</a>.</p>
+</section>
+<section id="blog" class="blog">
+    <p class="blog__header serif">My many thoughts</p>
     <ul class="blog__list">
         {% for post in site.posts %}
             <li class="blog__post">
                 <a class="blog__title sans_serif" href="{{ post.url }}">{{ post.title }}</a>
-                <p class="blog__date serif">{{ post.date | date_to_string: "ordinal", "US" | downcase }}</p>
+                <p class="blog__date sans_serif">{{ post.date | date_to_string: "ordinal", "US" | downcase }}</p>
             </li>
         {% endfor %}
     </ul>
