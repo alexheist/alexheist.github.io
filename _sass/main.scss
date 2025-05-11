@@ -149,6 +149,21 @@ a {
     }
 }
 
+.recommendations {
+    margin: 0 auto;
+    max-width: 600px;
+    font-size: .75rem;
+
+    &__lists {
+        border-bottom: 3px solid #aaa;
+        margin-bottom: 25px;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+}
+
 @media screen and (min-width: 600px) {
     html {
         font-size: 28px;
