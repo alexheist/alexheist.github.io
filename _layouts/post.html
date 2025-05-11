@@ -5,10 +5,13 @@ layout: default
     <img class="welcome__image" src="/assets/images/greeting.jpg" />
     <p class="welcome__greeting sans_serif">{{ page.title }}</p>
 </section>
+<section class="blurb">
+    <p class="serif">Learn about <a href="/2025/05/11/why-this-site-exists.html">why this site exists</a>. Or browse some of <a href="/#blog">my many thoughts</a>. Or visit some of <a href="/recommendations.html">my favorite blogs and posts</a>. Or <a href="mailto:hello@alexheist.com">just email me</a>.</p>
+</section>
 <section class="post">
     <p class="post__date">{{ page.date | date_to_string: "ordinal", "US" | downcase }}</p>
     <div class="post__content">
         {{ content }}
     </div>
-    <a href="/">return</a>
+    <a href="/">return home</a>
 </section>
