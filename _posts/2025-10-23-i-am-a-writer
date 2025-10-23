@@ -2,7 +2,6 @@
 layout: post
 title: "i am a writer"
 ---
-
 Wow. I've had all this energy to write and I've been thinking about writing and I've been craving time to sit and write all day and, now, I'm in front of my computer staring at a blank page wondering what the hell do I even want to write? Surely I'm the first person to ever experience this feeling. I can't imagine that any author, journalist, blogger, or poet I've ever read has had this exact experience. What now? I suppose that I'm writing still. Does it really count as writing if I'm just writing? Doesn't it have to *mean* something? Maybe not. Maybe all I need to do is just write. Maybe I just need to do the thing that has given me inspiration, the thing I've been thinking about, *craving*, all day. 
 
 So here I am. At a humble beginning of my writing practice. Alone. In front of my computer. With a keyboard that I enjoy too much to be considered normal. I'm fighting every urge to hit the backspace and start all over and write something more *meaningful*, whatever that means. I don't even know who I'm writing for. Certainly not any readers. Who would ever read this? I'm just writing for myself I guess. What meaning is any of this to *me* then?
