@@ -90,16 +90,20 @@ a {
 }
 
 .blurb {
-    max-width: 325px;
+    max-width: 500px;
     text-align: center;
     margin: 0 auto;
     font-size: .75rem;
     line-height: .75rem;
+
+    p {
+        margin: .15rem 0;
+    }
 }
 
 .blog {
     position: relative;
-    margin: 3rem auto 0;
+    margin: 1rem auto 0;
     max-width: 700px;
     font-size: .75rem;
 
