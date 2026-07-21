@@ -105,7 +105,6 @@ a {
     position: relative;
     margin: 2rem auto;
     font-size: .75rem;
-    border-top: 1px solid $primary-text;
     padding: 0;
     color: $emphasis-text;
     display: grid;
@@ -202,13 +201,15 @@ a {
     .vignette {
         margin: 1rem auto 0;
         grid-template-rows: 1fr;
-        grid-template-columns: 4fr 3fr;
+        grid-template-columns: 5fr 3fr;
         width: 90%;
         max-width: 900px;
-        column-gap: 0;
+        padding: 25px;
+        column-gap: 25px;
 
         &__image {
             max-width: 500px;
+            width: 100%;
             height: auto;
             margin: 10px 0;
         }
@@ -217,6 +218,7 @@ a {
             width: auto;
             display: grid;
             grid-template-rows: .5fr 1fr 4fr;
+            justify-self: start;
         }
     }
 

@@ -4,12 +4,13 @@ title: alex heist
 description: the personal website of alex heist
 ---
 {% include welcome.html greeting="Welcome!<br>You've found your way to the personal website of" is_home=true %}
-{% include blurb.html %}
+
+{% assign vignette = site.data.vignettes[0] %}
 <section id="vignette" class="vignette">
-    <img class="vignette__image" src="/assets/images/test_vignette3.jpg" />
+    <img class="vignette__image" src="/assets/images/vignettes/{{ vignette.date }}.jpg" />
     <div class="vignette__contentWrapper">
-        <p class="vignette__date">2026-06-17</p>
-        <p class="vignette__weekday">Wednesday</p>
-        <p class="vignette__content">My partner and I started watching the new season of Love Island US. Damn, what a wild first episode. It feels so different from the other series.</p>
+        <p class="vignette__date">{{ vignette.date }}</p>
+        <p class="vignette__weekday">{{ vignette.weekday }}</p>
+        <p class="vignette__content">{{ vignette.content }}</p>
     </div>
 </section>
