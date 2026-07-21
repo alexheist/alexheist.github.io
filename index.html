@@ -5,14 +5,11 @@ description: the personal website of alex heist
 ---
 {% include welcome.html greeting="Welcome!<br>You've found your way to the personal website of" is_home=true %}
 {% include blurb.html %}
-<section id="blog" class="blog">
-    <p class="blog__header serif"></p>
-    <ul class="blog__list">
-        {% for post in site.posts %}
-            <li class="blog__post">
-                <a class="blog__title sans_serif" href="{{ post.url }}">{{ post.title }}</a>
-                <p class="blog__date sans_serif">{{ post.date | date_to_string: "ordinal", "US" | downcase }}</p>
-            </li>
-        {% endfor %}
-    </ul>
+<section id="vignette" class="vignette">
+    <img class="vignette__image" src="/assets/images/test_vignette3.jpg" />
+    <div class="vignette__contentWrapper">
+        <p class="vignette__date">2026-06-17</p>
+        <p class="vignette__weekday">Wednesday</p>
+        <p class="vignette__content">My partner and I started watching the new season of Love Island US. Damn, what a wild first episode. It feels so different from the other series.</p>
+    </div>
 </section>
