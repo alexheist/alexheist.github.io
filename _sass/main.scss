@@ -90,50 +90,57 @@ a {
 }
 
 .blurb {
-    max-width: 325px;
+    max-width: 500px;
     text-align: center;
     margin: 0 auto;
     font-size: .75rem;
     line-height: .75rem;
+
+    p {
+        margin: .15rem 0;
+    }
 }
 
-.blog {
+.vignette {
     position: relative;
-    margin: 3rem auto 0;
-    max-width: 700px;
+    margin: 2rem auto;
     font-size: .75rem;
+    padding: 0;
+    color: $emphasis-text;
+    display: grid;
+    grid-template-rows: 1fr .5fr;
+    grid-template-columns: 1fr;
+    column-gap: 10px;
+    align-items: center;
 
-    &__header {
-        color: $emphasis-text;
-        font-weight: 600;
-        font-size: 1.5rem;
-        text-align: center;
-        border-bottom: 1px solid $primary-text;
-        padding-bottom: .15rem;
+    &__image {
+        width: 90%;
+        margin: 10px auto;
     }
 
-    &__list {
-        list-style-type: none;
-        padding: 0;
-    }
-
-    &__post {
+    &__contentWrapper {
+        background-color: #fafafa;
+        font-size: 14px;
+        border-left: 2.5px solid $alt-text;
+        padding: 5px 10px;
         display: grid;
-        grid-template-rows: 1fr;
-        grid-template-columns: 2fr 1fr;
-        margin: 0;
+        width: calc(90% - 20px);
+        margin: 0 auto;
+        grid-template-rows: .5fr 1fr 2fr;
     }
 
-    &__title {
-        display: inline;
-        justify-self: start;
-        color: $primary-text;
+    &__content {
+        margin: 0;
     }
 
     &__date {
         display: inline;
+        margin: .25rem 0 0 0;
+        justify-self: left;
+    }
+
+    &__weekday {
         margin: 0;
-        justify-self: end;
     }
 }
 
@@ -189,6 +196,30 @@ a {
 
     .blurb {
         font-size: .65rem;
+    }
+
+    .vignette {
+        margin: 1rem auto 0;
+        grid-template-rows: 1fr;
+        grid-template-columns: 5fr 3fr;
+        width: 90%;
+        max-width: 900px;
+        padding: 25px;
+        column-gap: 25px;
+
+        &__image {
+            max-width: 500px;
+            width: 100%;
+            height: auto;
+            margin: 10px 0;
+        }
+
+        &__contentWrapper {
+            width: auto;
+            display: grid;
+            grid-template-rows: .5fr 1fr 4fr;
+            justify-self: start;
+        }
     }
 
     .post {
