@@ -24,6 +24,10 @@ html {
     color: $primary-text;
 }
 
+body {
+    margin: 0;
+}
+
 a {
     color: $emphasis-text;
     font-weight: 500;
@@ -103,7 +107,7 @@ a {
 
 .vignette {
     position: relative;
-    margin: 2rem auto;
+    margin: 1rem auto;
     font-size: .75rem;
     padding: 0;
     color: $emphasis-text;
@@ -142,6 +146,13 @@ a {
     &__weekday {
         margin: 0;
     }
+}
+
+.banner {
+    margin: 0;
+    padding: 0;
+    height: 20px;
+    width: 100%;
 }
 
 .post {
@@ -199,7 +210,7 @@ a {
     }
 
     .vignette {
-        margin: 1rem auto 0;
+        margin: 1rem auto 3rem;
         grid-template-rows: 1fr;
         grid-template-columns: 5fr 3fr;
         width: 90%;
