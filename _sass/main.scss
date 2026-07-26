@@ -10,6 +10,16 @@
     line-height: 1rem;
 }
 
+@font-face {
+    font-family: "Stamps";
+    src: url('../fonts/Stamps-Regular.ttf');
+}
+
+@font-face {
+    font-family: "Hind";
+    src: url('../fonts/Hind-Variable.ttf');
+}
+
 $bg: #fff;
 $primary-text: #434860;
 $emphasis-text: #191B24;
@@ -17,10 +27,16 @@ $alt-text: #f3ce32;
 $blue: #57c4e5;
 $coral: #ff8360;
 
+.flowerb {
+  mask: 
+    linear-gradient(0,#0000 60px,#000 0) 0 30px,
+    radial-gradient(30px,#000 calc(100% - 1px),#0000) 50%/55.5px 60px repeat space
+}
+
 html {
     @include aku-type;
     font-size: 16px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Hind', sans-serif;
     color: $primary-text;
 }
 
@@ -44,11 +60,11 @@ a {
 }
 
 .serif {
-    font-family: 'EB Garamond', serif;
+    font-family: 'Stamps', serif;
 }
 
 .sans_serif {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Hind', sans-serif;
 }
 
 .welcome {
@@ -71,7 +87,7 @@ a {
         position: absolute;
         font-size: 1.5rem;
         line-height: 1.5rem;
-        font-weight: 500;
+        font-weight: 600;
         font-style: italic;
         color: $alt-text;
         width: 15rem;
@@ -83,10 +99,10 @@ a {
 
     &__name {
         position: absolute;
-        font-size: 5rem;
+        font-size: 7.5rem;
         font-weight: 600;
         color: $coral;
-        bottom: 1rem;
+        bottom: -1rem;
         width: 100%;
         left: 50%;
         transform: translateX(-50%);
@@ -105,15 +121,20 @@ a {
     }
 }
 
+.vignettes {
+    background-color: $blue;
+    margin-top: 50px;
+    padding: 50px 0;
+}
+
 .vignette {
     position: relative;
-    margin: 1rem auto;
-    font-size: .75rem;
-    padding: 0;
+    margin: 0;
     color: $emphasis-text;
     display: grid;
-    grid-template-rows: 1fr .5fr;
-    grid-template-columns: 1fr;
+    width: 100%;
+    grid-template-rows: auto auto;
+    grid-template-columns: auto;
     column-gap: 10px;
     align-items: center;
 
@@ -122,18 +143,22 @@ a {
         margin: 10px auto;
     }
 
-    &__contentWrapper {
-        background-color: #fafafa;
-        font-size: 14px;
+    &__content {
+        background-color: $blue;
+        color: $bg;
+        font-weight: 600;
+        font-size: .6rem;
         border-left: 2.5px solid $alt-text;
         padding: 5px 10px;
         display: grid;
         width: calc(90% - 20px);
         margin: 0 auto;
-        grid-template-rows: .5fr 1fr 2fr;
+        grid-template-rows: auto auto auto;
+        height: fit-content;
+        align-self: center;
     }
 
-    &__content {
+    &__text {
         margin: 0;
     }
 
@@ -148,11 +173,29 @@ a {
     }
 }
 
-.banner {
-    margin: 0;
-    padding: 0;
-    height: 20px;
-    width: 100%;
+.column {
+    width: 90%;
+    max-width: 1080px;
+    margin: 2rem auto;
+
+    &__content {
+        display: grid;
+        grid-template-rows: auto auto;
+        grid-template-columns: auto;
+    }
+
+    &__image {
+        width: 100%;
+    }
+
+    &__text {
+        background-color: #fafafa;
+        font-size: .6rem;
+        border-left: 2.5px solid $alt-text;
+        padding: 5px 10px;
+        width: calc(90% - 20px);
+        margin: 0 auto;
+    }
 }
 
 .post {
@@ -210,12 +253,8 @@ a {
     }
 
     .vignette {
-        margin: 1rem auto 3rem;
-        grid-template-rows: 1fr;
-        grid-template-columns: 5fr 3fr;
-        width: 90%;
-        max-width: 900px;
-        padding: 25px;
+        grid-template-rows: auto auto;
+        grid-template-columns: 5fr 4fr;
         column-gap: 25px;
 
         &__image {
@@ -223,17 +262,30 @@ a {
             width: 100%;
             height: auto;
             margin: 10px 0;
+            justify-self: end;
         }
 
-        &__contentWrapper {
-            width: auto;
-            display: grid;
-            grid-template-rows: .5fr 1fr 4fr;
+        &__content {
+            width: 400px;
             justify-self: start;
+            display: grid;
+            grid-template-rows: auto auto auto;
         }
     }
 
     .post {
         font-size: .75rem;
+    }
+
+    .column {
+        &__content {
+            grid-template-rows: auto;
+            grid-template-columns: 2fr 1fr;
+        }
+
+        &__text {
+            height: fit-content;
+            align-self: center;
+        }
     }
 }

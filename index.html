@@ -5,12 +5,61 @@ description: the personal website of alex heist
 ---
 {% include welcome.html greeting="Welcome!<br>You've found your way to the personal website of" is_home=true %}
 
-{% assign vignette = site.data.vignettes[0] %}
-<section id="vignette" class="vignette">
-    <img class="vignette__image" src="/assets/images/vignettes/{{ vignette.date }}.jpg" />
-    <div class="vignette__contentWrapper">
-        <p class="vignette__date">{{ vignette.date }}</p>
-        <p class="vignette__weekday">{{ vignette.weekday }}</p>
-        <p class="vignette__content">{{ vignette.content }}</p>
+{%- comment -%} {% assign vignette = site.data.vignettes[0] %}
+<section id="vignettes" class="vignettes flowerb">
+    <div class="vignette">
+        <img class="vignette__image" src="/assets/images/vignettes/{{ vignette.date }}.jpg" />
+        <div class="vignette__content">
+            <p class="vignette__date">{{ vignette.date }}</p>
+            <p class="vignette__weekday">{{ vignette.weekday }}</p>
+            <p class="vignette__text">{{ vignette.content }}</p>
+        </div>
     </div>
-</section>
+</section> {%- endcomment -%}
+
+<section id="column" class="column">
+    <div class="column__title">
+        <h1 class="serif">July, Sunday 26. 2026. - Beginnings</h1>
+    </div>
+    <div class="column__content">
+        <img class="column__image" src="/assets/images/beginnings.jpg" />
+        <div class="column__text">
+            <p>First,</p>
+            <p>Firstly</p>
+            <p>Lately</p>
+            <p>Before I begin</p>
+            <p>It all started with<p>
+            <p>I heard that</p>
+            <p>It's been said</p>
+            <p>To quote the great</p>
+            <p>In fair Verona</p>
+            <p>So there I was</p>
+            <p>To introduce this story</p>
+            <p>This paper will</p>
+            <p>Today,</p>
+            <p>To start with</p>
+            <p>Ever since</p>
+            <p>The</p>
+            <p>At the top</p>
+            <p>In the beginning</p>
+            <p>I'd argue</p>
+            <p>Sometimes,</p>
+            <p>Recently,</p>
+            <p>Imagine</p>
+            <p>Once upon a time</p>
+            <p>Suppose</p>
+            <p>This week</p>
+            <p>Yesterday</p>
+            <p>Before I die</p>
+            <p>Dear,</p>
+            <p>To whom it may concern</p>
+            <p>The beginning of this story</p>
+            <p>You might be thinking</p>
+            <p>From the beginning</p>
+            <p>When I was younger</p>
+            <p>The very first time</p>
+            <p>Since the beginning</p>
+            <p>Where do I even begin?</p>
+        </div>
+    </div>
+<section>
