@@ -5,17 +5,34 @@ description: the personal website of alex heist
 ---
 {% include welcome.html greeting="Welcome!<br>You've found your way to the personal website of" is_home=true %}
 
-{%- comment -%} {% assign vignette = site.data.vignettes[0] %}
-<section id="vignettes" class="vignettes flowerb">
-    <div class="vignette">
-        <img class="vignette__image" src="/assets/images/vignettes/{{ vignette.date }}.jpg" />
-        <div class="vignette__content">
-            <p class="vignette__date">{{ vignette.date }}</p>
-            <p class="vignette__weekday">{{ vignette.weekday }}</p>
-            <p class="vignette__text">{{ vignette.content }}</p>
+{% assign vignette = site.data.vignettes[0] %}
+<p class="note serif">Hover to Pause!</p>
+<section id="vignettes" class="vignettes vignettes__hoverPause flowerb">
+    <div class="vignettes__marquee">
+        {% for vignette in site.data.vignettes %}
+        <div class="vignette">
+            <img class="vignette__image" src="/assets/images/vignettes/{{ vignette.date }}.jpg" />
+            <div class="vignette__content">
+                <p class="vignette__date">{{ vignette.date }}</p>
+                <p class="vignette__weekday">{{ vignette.weekday }}</p>
+                <p class="vignette__text">{{ vignette.content }}</p>
+            </div>
         </div>
+        {% endfor %}
     </div>
-</section> {%- endcomment -%}
+    <div class="vignettes__marquee" aria-hidden="true">
+        {% for vignette in site.data.vignettes %}
+        <div class="vignette">
+            <img class="vignette__image" src="/assets/images/vignettes/{{ vignette.date }}.jpg" />
+            <div class="vignette__content">
+                <p class="vignette__date">{{ vignette.date }}</p>
+                <p class="vignette__weekday">{{ vignette.weekday }}</p>
+                <p class="vignette__text">{{ vignette.content }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
 
 <section id="column" class="column">
     <div class="column__title">
