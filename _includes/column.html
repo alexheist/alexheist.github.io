@@ -1,0 +1,11 @@
+<section id="column" class="column">
+    <div class="column__title">
+        <h1 class="serif">{{ include.date_str }} - {{ include.title }}</h1>
+    </div>
+    <div class="column__content">
+        <img class="column__image" src="/assets/images/{{ include.title | downcase }}.jpg" />
+        <div class="column__text">
+            {{ include.content }}
+        </div>
+    </div>
+</section>
