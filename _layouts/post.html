@@ -1,12 +1,5 @@
 ---
 layout: default
 ---
-{% include welcome.html greeting=page.title %}
-{% include blurb.html %}
-<section class="post">
-    <p class="post__date">{{ page.date | date_to_string: "ordinal", "US" | downcase }}</p>
-    <div class="post__content">
-        {{ content }}
-    </div>
-    <a href="/">return home</a>
-</section>
+{% include welcome.html greeting="You are now reading a writing written by" %}
+{% include column.html date_str=page.date_str title=page.title content=content %}

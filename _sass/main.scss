@@ -27,10 +27,28 @@ $alt-text: #f3ce32;
 $blue: #57c4e5;
 $coral: #ff8360;
 
-.flowerb {
+// .flowertb {
+//   mask: 
+//     linear-gradient(0,#0000 60px,#000 0) 0 30px,
+//     radial-gradient(30px,#000 calc(100% - 1px),#0000) 50%/55.5px 60px repeat space
+// }
+
+.flowert {
   mask: 
-    linear-gradient(0,#0000 60px,#000 0) 0 30px,
-    radial-gradient(30px,#000 calc(100% - 1px),#0000) 50%/55.5px 60px repeat space
+    // linear-gradient(180deg,#0000 60px,#000 0),
+    // radial-gradient(30px,#000 calc(100% - 1px),#0000) 50%/55.5px
+    linear-gradient(180deg,#0000 30px,#000 0),
+    radial-gradient(30px,#000 calc(100% - 1px),#0000) top/55.5px 60px
+}
+
+/* Animation rule */
+@keyframes scroll-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
 }
 
 html {
@@ -52,7 +70,7 @@ a {
 }
 
 .z-text {
-  transform: rotateX(30deg);
+  transform: rotateX(20deg);
 }
 
 .z-layer:not(:first-child) {
@@ -86,45 +104,58 @@ a {
     &__greeting {
         position: absolute;
         font-size: 1.5rem;
-        line-height: 1.5rem;
+        line-height: 1.75rem;
+        letter-spacing: .05rem;
         font-weight: 600;
         font-style: italic;
         color: $alt-text;
         width: 15rem;
         max-width: 400px;
-        top: 3rem;
+        top: 1.5rem;
         left: 50%;
         transform: translateX(-50%);
     }
 
     &__name {
         position: absolute;
-        font-size: 7.5rem;
+        font-size: 8.5rem;
+        letter-spacing: -.25rem;
         font-weight: 600;
         color: $coral;
-        bottom: -1rem;
+        bottom: -2rem;
         width: 100%;
         left: 50%;
         transform: translateX(-50%);
     }
 }
 
-.blurb {
-    max-width: 500px;
+.note {
+    margin: 50px auto 25px;
     text-align: center;
-    margin: 0 auto;
-    font-size: .75rem;
-    line-height: .75rem;
-
-    p {
-        margin: .15rem 0;
-    }
+    font-size: 2rem;
+    color: $coral;
 }
 
 .vignettes {
     background-color: $blue;
-    margin-top: 50px;
+    display: flex;
     padding: 50px 0;
+    overflow: hidden;
+    width: 100%;
+    user-select: none;
+
+    &__marquee {
+        display: flex;
+        flex-shrink: 0;
+        min-width: 100%;
+        justify-content: space-around;
+        animation: scroll-left calc(15s * 9) linear infinite;
+    }
+
+    &__hoverPause:hover
+    &__marquee {
+        animation-play-state: paused;
+    }
 }
 
 .vignette {
@@ -139,20 +170,22 @@ a {
     align-items: center;
 
     &__image {
-        width: 90%;
+        width: 80vw;
         margin: 10px auto;
+        border-radius: 25px;
+        border: 5px solid $alt-text;
     }
 
     &__content {
         background-color: $blue;
         color: $bg;
         font-weight: 600;
-        font-size: .6rem;
+        font-size: .8rem;
         border-left: 2.5px solid $alt-text;
         padding: 5px 10px;
         display: grid;
-        width: calc(90% - 20px);
-        margin: 0 auto;
+        width: calc(80vw - 20px);
+        margin: 0 20px;
         grid-template-rows: auto auto auto;
         height: fit-content;
         align-self: center;
@@ -176,7 +209,7 @@ a {
 .column {
     width: 90%;
     max-width: 1080px;
-    margin: 2rem auto;
+    margin: 6rem auto;
 
     &__content {
         display: grid;
@@ -198,47 +231,6 @@ a {
     }
 }
 
-.post {
-    margin: 3rem auto;
-    max-width: 750px;
-    font-size: .85rem;
-
-    &__content {
-        min-height: 33vh;
-        border-bottom: 3px solid #aaa;
-        margin-bottom: 25px;
-    }
-}
-
-.recommendations {
-    margin: 3rem auto 0;
-    max-width: 600px;
-    font-size: .75rem;
-
-    &__lists {
-        border-bottom: 3px solid #aaa;
-    }
-
-    &__list {
-        list-style-type: none;
-        padding: 0;
-        margin-bottom: 2rem;
-    }
-
-    &__header {
-        color: $emphasis-text;
-        font-weight: 600;
-        font-size: 1.5rem;
-        text-align: center;
-        border-bottom: 1px solid $primary-text;
-        padding-bottom: .15rem;
-    }
-
-    a {
-        color: $primary-text;
-    }
-}
-
 @media screen and (min-width: 600px) {
     html {
         font-size: 28px;
@@ -248,12 +240,8 @@ a {
         max-width: 600px;
     }
 
-    .blurb {
-        font-size: .65rem;
-    }
-
     .vignette {
-        grid-template-rows: auto auto;
+        grid-template-rows: auto;
         grid-template-columns: 5fr 4fr;
         column-gap: 25px;
 
@@ -267,14 +255,11 @@ a {
 
         &__content {
             width: 400px;
+            font-size: .7rem;
             justify-self: start;
             display: grid;
             grid-template-rows: auto auto auto;
         }
-    }
-
-    .post {
-        font-size: .75rem;
     }
 
     .column {

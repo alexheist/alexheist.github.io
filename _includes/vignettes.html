@@ -1,0 +1,28 @@
+{% assign vignette = site.data.vignettes[0] %}
+<p class="note serif">Hover to Pause!</p>
+<section id="vignettes" class="vignettes vignettes__hoverPause flowert">
+    <div class="vignettes__marquee">
+        {% for vignette in site.data.vignettes %}
+        <div class="vignette">
+            <img class="vignette__image" src="/assets/images/vignettes/{{ vignette.date }}.jpg" />
+            <div class="vignette__content">
+                <p class="vignette__date">{{ vignette.date }}</p>
+                <p class="vignette__weekday">{{ vignette.weekday }}</p>
+                <p class="vignette__text">{{ vignette.content }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="vignettes__marquee" aria-hidden="true">
+        {% for vignette in site.data.vignettes %}
+        <div class="vignette">
+            <img class="vignette__image" src="/assets/images/vignettes/{{ vignette.date }}.jpg" />
+            <div class="vignette__content">
+                <p class="vignette__date">{{ vignette.date }}</p>
+                <p class="vignette__weekday">{{ vignette.weekday }}</p>
+                <p class="vignette__text">{{ vignette.content }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
