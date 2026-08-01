@@ -13,11 +13,15 @@
 @font-face {
     font-family: "Stamps";
     src: url('../fonts/Stamps-Regular.ttf');
+    font-display: swap;
 }
 
 @font-face {
     font-family: "Hind";
     src: url('../fonts/Hind-Variable.ttf');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
 }
 
 $bg: #fff;
@@ -34,11 +38,13 @@ $coral: #ff8360;
 // }
 
 .flowert {
-  mask: 
-    // linear-gradient(180deg,#0000 60px,#000 0),
-    // radial-gradient(30px,#000 calc(100% - 1px),#0000) 50%/55.5px
+  -webkit-mask: 
     linear-gradient(180deg,#0000 30px,#000 0),
-    radial-gradient(30px,#000 calc(100% - 1px),#0000) top/55.5px 60px
+    radial-gradient(30px,#000 calc(100% - 1px),#0000) top/55.5px 60px;
+
+  mask: 
+    linear-gradient(180deg,#0000 30px,#000 0),
+    radial-gradient(30px,#000 calc(100% - 1px),#0000) top/55.5px 60px;
 }
 
 /* Animation rule */
@@ -152,8 +158,7 @@ a {
         animation: scroll-left calc(15s * 9) linear infinite;
     }
 
-    &__hoverPause:hover
-    &__marquee {
+    &__hoverPause:hover &__marquee {
         animation-play-state: paused;
     }
 }
