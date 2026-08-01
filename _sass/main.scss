@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 /*
     credit: Manu Moreale
     link: https://manuelmoreale.com/typography-and-spacing-in-css
@@ -228,7 +234,7 @@ a {
 
     &__text {
         background-color: #fafafa;
-        font-size: .6rem;
+        font-size: .8rem;
         border-left: 2.5px solid $alt-text;
         padding: 5px 10px;
         width: calc(90% - 20px);
@@ -275,6 +281,7 @@ a {
 
         &__text {
             height: fit-content;
+            font-size: .6rem;
             align-self: center;
         }
     }
