@@ -7,5 +7,8 @@ description: the personal website of alex heist
 {% include column.html date_str=site.posts.first.date_str title=site.posts.first.title content=site.posts.first.content %}
 {% include vignettes.html %}
 
-<section id="posts" class="posts">
-</section>
+{%- comment -%} <section id="posts" class="posts">
+    {% for post in site.posts %}
+    <p>{{post.title}}</p>
+    {%endfor %}
+</section> {%- endcomment -%}

@@ -3,7 +3,7 @@
         <h1 class="serif">{{ include.date_str }} - {{ include.title }}</h1>
     </div>
     <div class="column__content">
-        <img class="column__image" src="/assets/images/{{ include.title | downcase }}.jpg" />
+        <img class="column__image" src="/assets/images/{{ include.title | downcase | replace: ' ', '_' }}.jpg" />
         <div class="column__text">
             {{ include.content }}
         </div>
